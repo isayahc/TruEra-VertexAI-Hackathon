@@ -19,4 +19,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_USER_NAME: ${{ secrets.HF_USER_NAME }}
           HF_SPACE_NAME: ${{ secrets.HF_SPACE_NAME }}
-        run: git push https://$HF_USER_NAME:$HF_TOKEN@huggingface.co/spaces/$HF_USER_NAME/$HF_SPACE_NAME main
+        run: |
+            git fetch origin
+            git merge origin/main
+            git push https://$HF_USER_NAME:$HF_TOKEN@huggingface.co/spaces/$HF_USER_NAME/$HF_SPACE_NAME main
