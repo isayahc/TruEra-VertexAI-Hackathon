@@ -22,4 +22,5 @@ jobs:
         run: |
             git fetch origin
             git merge origin/main
+            git pull --rebase origin main
             git push https://$HF_USER_NAME:$HF_TOKEN@huggingface.co/spaces/$HF_USER_NAME/$HF_SPACE_NAME main
